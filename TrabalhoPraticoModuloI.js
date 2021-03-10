@@ -20,14 +20,8 @@ descobrir isso, você deve substituir no seu código a variável com o número q
 conferido.*/
 
 var num = parseInt(process.argv[2]);
-var resultado = []
-var i = 1
 var resultPrimo = []
 
-while (i <= num){
-    resultado.push(i)
-    i++;
-}
 var i = 0
 while (num >= i){
     i++;
