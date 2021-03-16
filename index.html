@@ -3,21 +3,38 @@
     <head>
         <title>Título da Página</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="index.css">
+        <script>
+        //alert("Hello World!");
+        console.log("Hello World!");
+        </script>
     </head>
     <body>
         <img width="400" height="200" src="https://www.google.com.br/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
-        <h1>Heading Principal 1</h1>
-        <h2>Heading Principal 2</h2>
+        <h1 id="texto2">Heading Principal 1</h1>
+        <h2 class="texto-header">Heading Principal 2</h2>
         <h3>Heading Principal 3</h3>
         <h4>Heading Principal 4</h4>
         <h5>Heading Principal 5</h5>
         <h6>Heading Principal 6</h6>
+        <br>
+        <script>
+            setTimeout(function() {
+                console.log("Passou 1 segundo")
+            }, 1000);
+            setTimeout(function() {
+                console.log("Passou 2 segundos")
+            }, 2000);
+            console.log("Hello World!");
+            //alert("Hello World!");
+            document.write("Um Texto qualquer!");
+        </script>
         
-        <p>Esse é um parágrafo</p>
+        <p id="paragrafo" class="paragrafo">Esse é um parágrafo</p>
         <br>
         <br>
         <br>
-        <p>Esse é outro parágrafo!</p>
+        <p id="paragrafo2" class="borda paragrafo">Esse é outro parágrafo!</p>
         
         <a href="http://www.google.com.br">Ir para o site do Google</a>
         <br>
@@ -60,6 +77,24 @@
         <textarea rows="5" cols="20">Eu amo minha esposa</textarea>
         <br>
 
-        <button type="button" onclick="alert('Hello World!')">Clique aqui!</button>
+        <button type="button" onclick="clickBotao()">Clique aqui!</button>
+        <br>
+        <button type="button2" onclick="clickBotao2()">Clique aqui 2!</button>
+        <script src="index.js"></script>
+        <br>
+        <img id="lampada" src="lampada-off.gif">
+        <br>
+        <button type="button" onclick="ligarLampada()">Ligar lâmpada</button>
+        <br>
+        <button type="button" onclick="desligarLampada()">Desligar lâmpada</button>
+        <br>
+        <br>
+        <button type="button" onclick="adicionarElementos()">Adicionar Elementos</button>
+        <button type="button" onclick="removerElementos()">Remover Elementos</button>
+        <br>
+
+        <div id= div-elementos>
+
+        </div>
     </body>
 </html>
