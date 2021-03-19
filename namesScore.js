@@ -18,6 +18,39 @@ fs.readFile("names.txt", "utf-8", function(err, data){
     }else {
         nomes = data.split(",");//Para configurar o arquivo como array. A vírgula é o delimitador das palavras
         nomes.sort()
-        console.log(nomes);
+
+        var alfabeto = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        
+        var scoreTotal = 0;
+
+        var maiorScore = 0;
+        var nomeMaiorScore = 0;
+
+        //for passando em cada um dos nomes
+        for (var i = 0 ; i < nomes.length; i++) {
+            var nome = nomes[i];
+            var valorAlfabetico = 0;
+            
+            //for passando em cada uma das lentras do nome atual
+            for (var j = 0; j < nome.length; j++) {
+                var letra = nome[j];
+
+                //encontrando a posição da letra no alfabeto
+                var valorLetra = alfabeto.indexOf(letra); //indexOf retorna o índice do item no array. Se não encontra o item (no caso a LETRA) no array, ele retorna -1
+                if (valorLetra !== -1) {
+                    valorAlfabetico += valorLetra + 1;
+                }
+            }
+            //calculando o score
+            var score = valorAlfabetico * (i + 1);
+            scoreTotal += score;
+            
+            if (score > maiorScore) {
+                maiorScore = score;
+                nomeMaiorScore = nome;
+            }
+        }
+        console.log(scoreTotal);
+        console.log (nomeMaiorScore + " - " + maiorScore);
     }
 })
